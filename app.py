@@ -1,5 +1,8 @@
 import streamlit as st
-import torch, os
+import torch
+import zipfile
+import urllib.request
+import os
 import numpy as np
 from PIL import Image
 from torchvision import transforms
