@@ -1,8 +1,8 @@
-torch==2.2.2
-torchvision==0.17.2
-transformers==4.41.2
-opencv-python-headless==4.9.0.80
-grad-cam==1.5.0
-streamlit==1.37.1
+torch
+torchvision
+transformers
+opencv-contrib-python-headless
+grad-cam
+streamlit
 Pillow
 numpy
