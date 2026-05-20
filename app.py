@@ -10,6 +10,19 @@ from pytorch_grad_cam.utils.model_targets import ClassifierOutputTarget
 
 CLASSES    = ['A', 'B', 'C', 'L', 'W', 'Y']
 MODEL_PATH = './model_weights'
+if not os.path.exists(MODEL_PATH):
+    REMOTE_MODEL_URL = "https://github.com/RomiUber/TRACK-D_Traducteur_Langues_Signes/releases/download/model/model_weights.zip"
+    ZIP_PATH = "./model_weights.zip"
+    EXTRACT_PATH = "./"
+
+    urllib.request.urlretrieve(REMOTE_MODEL_URL, ZIP_PATH)
+    print(f"ZIP téléchargé : {os.path.abspath(ZIP_PATH)}")
+
+    # Dézipper
+    with zipfile.ZipFile(ZIP_PATH, 'r') as zip_ref:
+        zip_ref.extractall(EXTRACT_PATH)
+
+    print(f"Fichiers extraits dans : {os.path.abspath(EXTRACT_PATH)}")
 CLASS_INFO = {
     'A': {'desc': 'Poing fermé, pouce sur le côté',  'color': '#818cf8'},
     'B': {'desc': 'Main plate, doigts joints levés', 'color': '#38bdf8'},
